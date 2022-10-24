@@ -17,7 +17,7 @@ body {
   text-align: center;
 }
 
-.gameboard {
+.game-board {
   width: 600px;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -37,4 +37,37 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  .game-board {
+    width: 450px;
+  }
+
+  .field {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .game-board {
+    width: 360px;
+  }
+
+  .field {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .gameboard {
+    width: 300px;
+  }
+
+  .field {
+    width: 100px;
+    height: 100px;
+  }
 }
