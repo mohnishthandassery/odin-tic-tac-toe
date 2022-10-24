@@ -64,6 +64,7 @@ const displayController = (() => {
 
   resetElement.addEventListener("click", (e) => {
     GameBoard.resetBoard();
+    gameController.resetRound();
     updateGameboard();
   });
 
@@ -131,7 +132,11 @@ const gameController = (() => {
     return !GameBoard.getBoard().filter((x) => x == "").length > 0;
   };
 
+  const resetRound = () => {
+    isOver = false;
+  };
+
   setHeading();
 
-  return { getCurrentPlayer, playRound, setHeading };
+  return { getCurrentPlayer, playRound, setHeading, resetRound };
 })();
