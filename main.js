@@ -39,9 +39,9 @@ const displayController = (() => {
   const fieldElements = document.querySelectorAll(".field");
   const messageElement = document.querySelector("#message");
   const resetElement = document.querySelector("#reset");
-  const headingElement = document.querySelector("h1");
+  const headingElement = document.querySelector("h2");
 
-  const updateGameboard = () => {
+  const updateGameBoard = () => {
     for (let i = 0; i < fieldElements.length; i++) {
       fieldElements[i].textContent = GameBoard.getBoard()[i];
     }
@@ -65,11 +65,12 @@ const displayController = (() => {
   resetElement.addEventListener("click", (e) => {
     GameBoard.resetBoard();
     gameController.resetRound();
-    updateGameboard();
+    updateGameBoard();
+    setMessage("");
   });
 
   return {
-    updateGameboard,
+    updateGameBoard,
     setMessage,
     setHeading,
   };
@@ -91,15 +92,15 @@ const gameController = (() => {
   const playRound = (index) => {
     if (GameBoard.getBoardItem(index) || isOver) return;
     GameBoard.setBoardItem(index, gameController.getCurrentPlayer());
-    displayController.updateGameboard();
+    displayController.updateGameBoard();
     if (checkWinner(index)) {
       isOver = true;
       displayController.setMessage(`${getCurrentPlayer()} is the winner`);
-      setHeading("Tic-Tac-Toe");
+      setHeading("Game Over");
     } else if (checkTie()) {
       isOver = true;
       displayController.setMessage(`It's a tie`);
-      setHeading("Tic-Tac-Toe");
+      setHeading("Game Over");
     } else {
       round++;
       setHeading();
@@ -133,7 +134,9 @@ const gameController = (() => {
   };
 
   const resetRound = () => {
+    round = 0;
     isOver = false;
+    setHeading();
   };
 
   setHeading();

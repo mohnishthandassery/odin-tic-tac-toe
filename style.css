@@ -1,10 +1,13 @@
 :root {
   --background-color: #f6f6f6;
   --grey: #d3d3d3;
+  --border-width: 2px;
+  --border-type: solid;
+  --border-color: black;
 }
 
 * {
-  font-family: "Roboto", Helvetica, sans-serif;
+  font-family: "Raleway", Helvetica, sans-serif;
 }
 
 body {
@@ -31,12 +34,57 @@ body {
 .field {
   width: 200px;
   height: 200px;
-  border: 1px solid black;
   font-size: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.field:nth-of-type(4),
+.field:nth-of-type(6),
+.field:nth-of-type(7),
+.field:nth-of-type(8),
+.field:nth-of-type(9) {
+  border-top: var(--border-width) var(--border-type) var(--border-color);
+}
+
+.field:nth-of-type(1),
+.field:nth-of-type(2),
+.field:nth-of-type(4),
+.field:nth-of-type(7),
+.field:nth-of-type(8) {
+  border-right: var(--border-width) var(--border-type) var(--border-color);
+}
+
+.field:nth-of-type(1),
+.field:nth-of-type(2),
+.field:nth-of-type(3),
+.field:nth-of-type(4),
+.field:nth-of-type(6) {
+  border-bottom: var(--border-width) var(--border-type) var(--border-color);
+}
+
+.field:nth-of-type(2),
+.field:nth-of-type(3),
+.field:nth-of-type(6),
+.field:nth-of-type(8),
+.field:nth-of-type(9) {
+  border-left: var(--border-width) var(--border-type) var(--border-color);
+}
+
+.field:nth-of-type(5) {
+  border: var(--border-width) var(--border-type) var(--border-color);
+}
+
+button {
+  width: 160px;
+  padding: 16px;
+  border: 0;
+  border-radius: 8px;
+  background-color: teal;
+  color: white;
+  font-size: medium;
 }
 
 @media only screen and (max-width: 500px) {
@@ -62,7 +110,7 @@ body {
 }
 
 @media only screen and (max-width: 300px) {
-  .gameboard {
+  .game-board {
     width: 300px;
   }
 
