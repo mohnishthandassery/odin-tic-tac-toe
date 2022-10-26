@@ -17,20 +17,26 @@
   <body>
     <main class="container">
       <h1>Tic Tac Toe</h1>
-      <h2></h2>
-      <div class="game-board">
-        <div class="field" data-index="0"></div>
-        <div class="field" data-index="1"></div>
-        <div class="field" data-index="2"></div>
-        <div class="field" data-index="3"></div>
-        <div class="field" data-index="4"></div>
-        <div class="field" data-index="5"></div>
-        <div class="field" data-index="6"></div>
-        <div class="field" data-index="7"></div>
-        <div class="field" data-index="8"></div>
+      <div id="start-screen">
+        <button type="button" id="com">Play against computer</button>
+        <button type="button" id="player">Play against a friend</button>
       </div>
-      <p id="message"></p>
-      <button type="button" id="reset">Restart</button>
+      <div id="game-screen" class="hide">
+        <h2></h2>
+        <div class="game-board">
+          <div class="field" data-index="0"></div>
+          <div class="field" data-index="1"></div>
+          <div class="field" data-index="2"></div>
+          <div class="field" data-index="3"></div>
+          <div class="field" data-index="4"></div>
+          <div class="field" data-index="5"></div>
+          <div class="field" data-index="6"></div>
+          <div class="field" data-index="7"></div>
+          <div class="field" data-index="8"></div>
+        </div>
+        <p id="message"></p>
+        <button type="button" id="reset">Reset</button>
+      </div>
     </main>
   </body>
 </html>

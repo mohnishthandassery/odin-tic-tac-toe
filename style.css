@@ -87,6 +87,21 @@ button {
   font-size: medium;
 }
 
+#start-screen button {
+  width: 320px;
+  margin: 16px;
+  padding: 16px;
+  border: 0;
+  border-radius: 8px;
+  background-color: midnightblue;
+  color: white;
+  font-size: medium;
+}
+
+.hide {
+  display: none;
+}
+
 @media only screen and (max-width: 500px) {
   .game-board {
     width: 450px;
